@@ -58,7 +58,7 @@ module.exports.usersController = {
       const user = await User.findById(req.params.user_id);
       const book = await Book.findById(req.params.book_id);
 
-      if (!user.rentedBooks.includes()) {
+      if (!user.rentedBooks.includes(req.params.book_id)) {
         return res.json(`Книга ${book.name} не найдена в списке арендованных`);
       }
 
